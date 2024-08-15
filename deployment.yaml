@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: translate-app-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: translate-app
+  template:
+    metadata:
+      labels:
+        app: translate-app
+    spec:
+      containers:
+      - name: translate-app
+        image: maharaj2113/translate-app:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: API_KEY_HEADER
+          value: "06de4ebb25mshad1d579533fcb83p1d7bebjsne0c7e73548b9" # Replace with your actual API key
