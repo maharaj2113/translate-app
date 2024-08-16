@@ -13,18 +13,18 @@ Go 1.20+
 Docker
 Kubernetes 
 
- Build and Run the Application Locally
+# Build and Run the Application Locally
 If you want to run the application locally without Docker:
 go run main.go
 
 
-#Build the Docker Image
+#Build the Docker Image:
 docker build -t translate-app .
 
-#Run the Docker Container
+#Run the Docker Container:
 docker run -d -p 8080:8080 translate-app
 
-#Deploy to Kubernetes
+#Deploy to Kubernetes:
 kubectl apply -f deployment.yaml
 
 Once the application is running (either locally, in Docker, or in Kubernetes), you can send a POST request to the /translate endpoint to translate text.
